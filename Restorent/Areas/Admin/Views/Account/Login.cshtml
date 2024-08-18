@@ -1,0 +1,59 @@
+﻿@model Restorent.Areas.Admin.ViewModels.LoginModel
+
+@{
+    Layout = "_LayoutLogin";
+    ViewData["Title"] = "Login";
+}
+
+
+<div class="pt-4 pb-2">
+	<h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+	<p class="text-center small">Enter your username & password to login</p>
+</div>
+
+
+
+        <form asp-action="Login" class="row g-3 needs-validation" novalidate="">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-12">
+
+
+                <label asp-for="Email" class="form-label">Email</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend"></span>
+                    <input asp-for="Email" type="email" name="Email" class="form-control" id="Email" required="">
+                    <div class="invalid-feedback">Please enter your Email.</div>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div> 
+
+
+            <div class="col-12">
+                <label asp-for="Password" class="form-label">Password</label>
+                <div class="input-group has-validation">
+                   
+                    <input asp-for="Password" type="password" name="Password" class="form-control" id="Password" required="">
+                    <div class="invalid-feedback">Please enter your Password.</div>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+
+
+          <div class="col-12">
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="RememberMe" value="true" id="RememberMe">
+            <label class="form-check-label" asp-for="RememberMe">Remember me</label>
+             </div>
+          </div>
+
+            <div class="col-12">
+                <button class="btn btn-primary w-100" type="submit">Login</button>
+            </div>
+
+
+        </form>
+  
+
+
+

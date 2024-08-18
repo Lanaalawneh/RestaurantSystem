@@ -1,0 +1,157 @@
+﻿@model IEnumerable<Restorent.Models.MasterMenu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="pagetitle">
+    <h1>Master Menu</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Pages</a></li>
+
+            <li class="breadcrumb-item active">Master Menu</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title d-flex justify-content-end">
+                        <a asp-action="Create" class="btn btn-success" id="Creat">Create New +</a>
+                    </h5>
+
+
+
+
+                    <table class="table datatable">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MasterMenuName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MasterMenuUrl)
+                                </th>
+                                <th class="text-center">
+                                    Operations
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MasterMenuName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MasterMenuUrl)
+                                    </td>
+
+                                    <td style="padding-left: 7%;">
+
+                                        <a asp-action="Edit" asp-route-id="@item.MasterMenuId">
+                                            <i class="bx bxs-edit text-secondary h5"></i>
+                                        </a>
+
+                                        <a class="selectDelete" href="" data-paths="@Url.ActionLink("Delete", "MasterMenu",
+                                             new {  id=item.MasterMenuId })" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="bx bxs-trash text-danger h5"></i>
+                                        </a>
+
+                                        @if (item.IsActive == true)
+                                        {
+                                            <a asp-action="Active" asp-route-id="@item.MasterMenuId">
+                                                <i class="ri-eye-fill text-success h5"></i>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a asp-action="Active" asp-route-id="@item.MasterMenuId">
+                                                <i class="ri-eye-close-fill text-danger h5"></i>
+                                            </a>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+
+
+
+<!--Delete global message -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                are u delete ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="btnCancel" data-bs-dismiss="modal">Close</button>
+                <input type="button" class="btn btn-danger" id="btnConfirmDelete" value="Delete" />
+                @*<button type="button" class="btn btn-danger" id="btnConfirmDelete" asp-action="Delete" asp-controller="MasterWorkingHour">
+                    Delete
+                </button>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+<script>
+
+    var idpath = "";
+    $(function () {
+
+
+        $('.selectDelete').click(function () {
+            /* alert($(this).data('batata'))*/
+            idpath = $(this).data('paths');
+
+        })
+
+        $("#btnConfirmDelete").click(function () {
+
+            window.location = idpath;
+            idpath = "";
+        })
+        $("#btnCancel").click(function () {
+
+            idpath = "";
+        })
+
+
+    })
+
+
+</script>
+

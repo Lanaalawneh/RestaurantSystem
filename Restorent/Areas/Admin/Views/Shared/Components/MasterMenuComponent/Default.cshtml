@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@if (User.Identity.IsAuthenticated)
+{
+
+    @foreach (var item in Model)
+    {
+        @*<li class="nav-item active">
+            <a class="nav-link" href="@item.MasterMenuUrl">@item.MasterMenuName </a>
+        </li>*@
+
+    }
+
+
+    <li><a asp-action="Logout" asp-controller="Account"> @User.Identity.Name</a></li>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*else
+{
+    <li class="nav-item active">
+        <a class="nav-link" asp-action="Register" asp-controller="Account">Register </a>
+
+    </li>
+    <li>
+        <a class="nav-link" asp-action="Login" asp-controller="Account">Login </a>
+    </li>
+
+}*@

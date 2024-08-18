@@ -1,0 +1,457 @@
+﻿@model Restorent.ViewsModel.HomeModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name="description" content="">
+    <meta name="robots" content="noindex, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/assets/img/favicon.png">
+
+    <!-- all css here -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/icons.css">
+    <link rel="stylesheet" href="~/assets/css/plugins.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+    <link rel="stylesheet" href="~/assets/css/styleChange.css">
+    <script src="~/assets/js/vendor/modernizr-3.11.7.min.js"></script>
+
+
+</head>
+<body>
+
+    <header class="header-area transparent-bar header-position">
+        <div class="container">
+            <div class="row">
+
+                <!------------------System Setting Logo ---------------- DONE -------------->
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+
+                        <!------------------System Setting Logo ---------------- DONE -------------->
+                        <a href="index.html">
+                            <img class="logo-normal" alt="" src="~/Admin/assets/img/@Model.SystemSetting.SystemSettingLogoImageUrl2">
+                            <img class="logo-sticky" alt="" src="~/Admin/assets/img/@Model.SystemSetting.SystemSettingLogoImageUrl">
+                        </a>
+
+
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8 relative">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+
+
+
+                                    @foreach (var item in Model.ListMasterMenu)
+                                    {
+                                        <li class="top-hover">
+                                            <a href="@item.MasterMenuUrl">@item.MasterMenuName </a>
+
+                                        </li>
+                                    }
+
+                                </ul>
+                            </nav>
+                        </div>
+
+
+
+                        <div class="search-wrap">
+                            <button class="search-toggle">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            <div class="search">
+                                <form action="#">
+                                    <input type="search" placeholder="Search here">
+                                    <button type="submit">
+                                        Search
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                <li>
+                                    <a href="#">HOME</a>
+                                    <ul>
+                                        <li><a href="index.html">home version 1</a></li>
+                                        <li><a href="index-2.html">home version 2</a></li>
+                                        <li><a href="index-3.html">home version 3</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">pages</a>
+                                    <ul>
+                                        <li><a href="about-us.html">about us </a></li>
+                                        <li><a href="menu.html">menu style 1</a></li>
+                                        <li><a href="menu-2.html">menu style 2</a></li>
+                                        <li><a href="gallery.html">gallery style 1</a></li>
+                                        <li><a href="gallery-2.html">gallery style 2</a></li>
+                                        <li><a href="contact.html">contact us</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">menu</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">menu list 01</a>
+                                            <ul>
+                                                <li><a href="menu.html">salad</a></li>
+                                                <li><a href="menu.html">sandwich</a></li>
+                                                <li><a href="menu.html">bread</a></li>
+                                                <li><a href="menu.html">steak</a></li>
+                                                <li><a href="menu.html">tuna steak</a></li>
+                                                <li><a href="menu.html">spaghetti </a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">menu list 02</a>
+                                            <ul>
+                                                <li><a href="menu.html">rice</a></li>
+                                                <li><a href="menu.html">pizza</a></li>
+                                                <li><a href="menu.html">hamburger</a></li>
+                                                <li><a href="menu.html">eggs</a></li>
+                                                <li><a href="menu.html">sauces</a></li>
+                                                <li><a href="menu.html">apple juice</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">menu list 03</a>
+                                            <ul>
+                                                <li><a href="menu.html">milk</a></li>
+                                                <li><a href="menu.html">grape juice</a></li>
+                                                <li><a href="menu.html">cookie</a></li>
+                                                <li><a href="menu.html">candy</a></li>
+                                                <li><a href="menu.html">cake</a></li>
+                                                <li><a href="menu.html">cupcake</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">menu list 04</a>
+                                            <ul>
+                                                <li><a href="menu.html">pie</a></li>
+                                                <li><a href="menu.html">strawberry</a></li>
+                                                <li><a href="menu.html">sandwich</a></li>
+                                                <li><a href="menu.html">bread</a></li>
+                                                <li><a href="menu.html">steak</a></li>
+                                                <li><a href="menu.html">hamburger</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">blog</a>
+                                    <ul>
+                                        <li><a href="blog-no-sidebar.html">Blog No sidebar</a></li>
+                                        <li><a href="blog.html">Blog sidebar</a></li>
+                                        <li><a href="blog-details.html">Blog details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html"> Contact us </a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+
+
+
+
+
+    <!--------------------The Footer ---------------------------------->
+    <footer class="footer-area">
+        <div class="footer-area-top black-bg pt-95 pb-60">
+            <div class="container">
+                <div class="row">
+
+
+
+
+                    <!------------------------The Base of SocialMedia-------  DONE ------------------->
+
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget mb-40">
+
+                            <div class="footer-title mb-30">
+                                <h4>About Us</h4>
+                            </div>
+
+
+                            <div class="footer-about">
+                                <p> Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do tempor eget loved dost venenatis.</p>
+
+
+
+
+                                <!-----------------This page Radirect to (( Conatct US Page   ))------------------->
+                                <div class="footer-map">
+                                    <a href="contact.html"><i class="ion-ios-location-outline"></i> View on map</a>
+                                </div>
+
+                            </div>
+  
+
+                                <div class="social-icon">
+                                    <ul>
+                                         @foreach (var item in Model.ListMasterSocialMedia)
+                                         {
+
+                                           <li>@Html.Raw(item.MasterSocialMediaUrl) @Html.Raw(item.MasterSocialMediaImageUrl)</li>
+
+                                         }
+                                    </ul>
+                                </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <!-----------------------The Base Of Conatct US----  DONE ------------------->
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget mb-40">
+
+
+                            <div class="footer-title mb-30">
+                                <h4>contact Us</h4>
+                            </div>
+
+
+                            
+
+                            @foreach (var item in Model.ListMasterContactUsInformation)
+                            {
+                               
+                               <div class="footer-cont-info">
+
+                                 <div class="single-footer-cont-info">
+
+                                        <div class="cont-info-icon">
+                                            @Html.Raw(item.MasterContactUsInformationImageUrl)
+                                        </div>
+
+                                        <div class="cont-info-content">
+                                            <p>@Html.Raw(@item.MasterContactUsInformationIdesc)</p>
+@*                                            <p><a @Html.Raw(@item.MasterContactUsInformationRedirect)>@Html.Raw(@item.MasterContactUsInformationIdesc)</a></p>
+*@                                           
+                                        </div>
+
+
+                                  </div>
+
+
+                               </div>
+
+                            }
+
+
+                               
+
+                           @* <div class="footer-cont-info">
+
+                                <div class="single-footer-cont-info">
+
+                                    <div class="cont-info-icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+
+
+
+                                    <div class="cont-info-content">
+                                        <p>Elizabeth Tower. 6th Floor Medtown, New York</p>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="single-footer-cont-info">
+
+                                    <div class="cont-info-icon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+
+
+
+                                    <div class="cont-info-content">
+                                        <p>+012 345-6789123</p>
+                                        <p>+012 345-6789123</p>
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="single-footer-cont-info">
+
+                                    <div class="cont-info-icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+
+
+                                    <div class="cont-info-content">
+                                      <p><a href="#">Lana@email.com</a></p>
+                            <p><a href="#">info@example.com</a></p>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>*@
+
+
+                        </div>
+                    </div>
+
+
+
+                    <!-------------------------The DataBase of WorkingHour ------  DONE ------------------->
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget mb-40">
+
+
+                            <div class="footer-title mb-30">
+                                <h4>Opening Time</h4>
+                            </div>
+
+
+
+                            <!-------------------------The DataBase of WorkingHour ------ IS DONE ------------------->
+
+                            @foreach (var item in Model.ListMasterWorkingHour)
+                            {
+                                @*@Html.Raw(item.MasterWorkingHourIdName)*@
+
+                                <div class="open-time pr-30" style="padding-bottom: 3%;">
+                                <ul>
+
+                                  <li> 
+                                     
+                                            @item.MasterWorkingHourIdName
+                                      <span>@item.MasterWorkingHourIdTimeFormTo</span>
+                                  </li>
+
+
+                                </ul>
+                              </div>
+
+
+                            }
+                            
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <!-------------------------The DataBase Of NewsLatter---------  DONE ---------------->
+
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" >
+                        <div class="footer-widget mb-40">
+                            <div class="footer-title mb-30">
+                                <h4>Newsletter</h4>
+                            </div>
+
+
+
+                            <div class="newsletter-style">
+                                <p> Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do.</p>
+                                <div id="mc_embed_signup" class="subscribe-form ">
+
+                                    <form asp-controller="Home" asp-action="AddNewsletter">
+                                        <div id="mc_embed_signup_scroll" class="mc-form">
+
+                                            <input class="email" type="email" asp-for="TransactionNewsletter.TransactionNewsletterEmail" required="" placeholder="Enter your email">
+                                            <input type="hidden" asp-for="TransactionNewsletter.TransactionNewsletterId">
+
+                                            <div class="mc-news" aria-hidden="true">
+                                                <input type="hidden" value="" tabindex="-1" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef">
+                                            </div>
+
+                                            <div class="clear">
+                                                <input id="mc-embedded-subscribe" class="button" type="submit" name="subscribe" value="Subscribe">
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-------------------------The Copy Right ------  DONE------------------->
+
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+
+                    @Html.Raw(Model.SystemSetting.SystemSettingCopyright)
+                    
+                   @* <p>Copyright © <a href="#">Basmoti</a>. All Right Reserved.</p>*@
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+
+     
+
+    <!-- all js here -->
+    <script src="~/assets/js/vendor/jquery-v1.12.4.min.js"></script>
+    <script src="~/assets/js/popper.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/ajax-mail.js"></script>
+    <script src="~/assets/js/plugins.js"></script>
+    <script src="~/assets/js/main.js"></script>
+
+</body>
+</html>
